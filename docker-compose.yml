@@ -1,0 +1,18 @@
+services:
+  storespark:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    env_file:
+      - .env
+    environment:
+      STORESPARK_HOST: 0.0.0.0
+      STORESPARK_PORT: "8000"
+      STORESPARK_DATA_DIR: /app/data
+      STORESPARK_ACCESS_TOKEN: ${STORESPARK_ACCESS_TOKEN:?请在 .env 中配置至少 24 字符的访问令牌}
+    volumes:
+      - storespark-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  storespark-data:

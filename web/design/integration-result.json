@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "apiInterception": false,
+  "runtimeErrors": [],
+  "consoleErrors": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+      "url": "http://127.0.0.1:5173/api/v1/tasks/ba51a152a8954384a3d5d888b3060748/messages"
+    }
+  ],
+  "intentionalFailure": "模型 fixture 返回 502；未调用真实模型",
+  "viewport": [
+    "1504x1048",
+    "390x844"
+  ],
+  "checked": [
+    "create",
+    "upload",
+    "direction",
+    "generate",
+    "trim-save",
+    "export",
+    "failure-preserves-input",
+    "mobile-overflow"
+  ]
+}

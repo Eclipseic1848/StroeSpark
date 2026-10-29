@@ -1,0 +1,3 @@
+# Windows 与 Linux 使用相同的源文件换行。
+* text=auto eol=lf
+*.png -text

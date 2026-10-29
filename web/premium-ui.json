@@ -1,0 +1,10 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": ["web/src"],
+  "locale": "zh-CN",
+  "canonicalMap": "DESIGN.md",
+  "requiredCapabilities": ["Form", "Scrollbar", "Toast", "CRUD"],
+  "requiredCommands": ["build", "e2e"],
+  "commands": { "build": "npm --prefix web run build", "e2e": "npm --prefix web test" },
+  "evidence": { "crudFullFlow": "web/tests/workspace.spec.ts", "failurePaths": "web/tests/workspace.spec.ts" }
+}
