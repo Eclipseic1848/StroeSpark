@@ -52,4 +52,4 @@
 
 ## 未验证范围
 
-未验证 Linux、Safari、Firefox、手机真机、微信小程序、真实 DeepSeek 成本与输出、模型中断后的服务器重启恢复或多人并发编辑。当前浏览器隔离测试不代替这些检查。
+本记录的本地浏览器环境为 Windows/Chromium；Linux 构建与浏览器交互后续已由主线程通过 GitHub CI 核验，见根目录 handoff.md。Safari、Firefox、手机真机、微信小程序、真实 DeepSeek 成本与输出、模型中断后的服务器重启恢复或多人并发编辑仍未验证。当前浏览器隔离测试不代替这些检查。
