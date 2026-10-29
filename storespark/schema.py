@@ -2,7 +2,7 @@
 
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, SecretStr
+from pydantic import BaseModel, ConfigDict, Field, SecretStr, model_validator
 
 
 class InputModel(BaseModel):
@@ -36,8 +36,14 @@ class ArtifactInput(InputModel):
 class ModelReply(InputModel):
     reply: str = Field(min_length=1, max_length=20000)
     direction: str = Field(default="", max_length=12000)
-    title: str = Field(default="宣传文案", min_length=1, max_length=200)
+    title: str = Field(default="宣传文案", max_length=200)
     content: str = Field(default="", max_length=24000)
     missing_facts: list[str] = Field(max_length=30)
     usage: str = Field(default="", max_length=4000)
     validation: str = Field(default="", max_length=4000)
+
+    @model_validator(mode="after")
+    def require_title_for_content(self) -> "ModelReply":
+        if self.content and not self.title:
+            raise ValueError("生成正文时必须提供非空标题")
+        return self

@@ -12,8 +12,8 @@ StoreSpark 是面向餐饮店主、门店运营和品牌运营人员的营销助
 - 优先面向餐饮行业，后续考虑向快消行业扩展。
 - GitHub 仓库：[Eclipseic1848/StroeSpark](https://github.com/Eclipseic1848/StroeSpark)，项目工作名仍为 StoreSpark。执行状态见[GitHub 任务跟踪](docs/github-tracking.md)。
 - 当前采用 Python FastAPI + SQLite 后端、React + TypeScript + Vite Web 客户端，面向 Windows 开发、未来 Linux 部署及可能的小程序客户端。
-- 后端 46 项检查通过，覆盖 provider、业务流程、真实服务进程和上传限额。Web 构建、5 项浏览器交互及真实 API 联调通过；[Windows/Linux、Web 和 Linux 容器 CI](https://github.com/Eclipseic1848/StroeSpark/actions/runs/40800541934)均已通过。
-- 默认模型为官方 DeepSeek Flash，尚未配置真实密钥或验证实际调用。上传限额已前移到 multipart 解析前，并保留精确文件大小检查。
+- 后端原有 46 项检查与真实调用发现问题的新增 4 项回归，共 50 项通过；Web 构建、5 项浏览器交互及实际 API 联调通过。既有[Windows/Linux、Web 和 Linux 容器 CI](https://github.com/Eclipseic1848/StroeSpark/actions/runs/40800541934)均已通过，最新提交状态以 Actions 为准。
+- 官方 DeepSeek Flash 真实调用已验证，涵盖文字、图片、澄清、方向、生成、修改及错误恢复。存在保留记录的失败与输出质量偏差，详见[真实调用验证](docs/verification/deepseek-live-2026-10-28.md)。上传限额已在 multipart 解析前生效。
 - 用户已于 2026-10-28 要求继续，并授权推送工程及在 GitHub 创建和执行 Issues。此前的[暂停记录](docs/development-checkpoint.md)保留为历史现场。
 
 ## 本地运行
@@ -40,6 +40,7 @@ StoreSpark 是面向餐饮店主、门店运营和品牌运营人员的营销助
 | [开发暂停记录](docs/development-checkpoint.md) | 已写代码、已通过检查、已确认缺陷、未完成前端及恢复顺序 |
 | [开发与部署](docs/development-and-deployment.md) | Windows 启动、模型配置、Linux 容器入口、数据备份与验证命令 |
 | [GitHub 任务跟踪](docs/github-tracking.md) | 本轮 Issues、验收边界及实际执行状态 |
+| [DeepSeek 真实调用验证](docs/verification/deepseek-live-2026-10-28.md) | 四种起点、真实成功与失败、空标题修复及尚未完成的商家验证 |
 | [需求与决策记录](docs/discovery-log.md) | 用户反馈、确认过程、假设和待验证事项 |
 | [内容制作 Skill 与模板调研](docs/research/content-skills-landscape-2026-10-26.md) | 品牌、快消、零售与餐饮领域的 13 个候选项目、具体资源、适配分析和局限 |
 | [AGENTS.md](AGENTS.md) | 本项目的协作、语言、编码和实施约定 |

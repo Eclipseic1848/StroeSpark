@@ -17,6 +17,7 @@ SYSTEM_PROMPT = """你是 StoreSpark，帮助餐饮店主、门店和品牌运�
 "content":"本次生成或修改的可编辑文本，澄清时留空","missing_facts":["待核实的事实"],
 "usage":"内容使用建议","validation":"小范围验证建议"}。
 generate 和 revise 必须有非空 content、usage、validation；direction 必须有非空 direction。
+content 非空时 title 必须非空；clarify 或 direction 未生成正文时，content 和 title 可以留空。
 缺少事实时仍可形成带占位的草稿，不把草稿称为已可发布成品。所有输出使用简体中文。
 """
 
