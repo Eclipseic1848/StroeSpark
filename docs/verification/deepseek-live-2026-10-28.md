@@ -2,6 +2,8 @@
 
 日期：2026-10-28。关联 [#4](https://github.com/Eclipseic1848/StroeSpark/issues/4) 与 [#6](https://github.com/Eclipseic1848/StroeSpark/issues/6)。
 
+后续针对素材外宣传属性和重复追问的修复见[质量对比报告](content-grounding-2026-10-28.md)。本页保留首次真实验证当时的成功、失败和观察，不追改为后续结果。
+
 ## 结论
 
 官方 `https://api.deepseek.com`、`deepseek-flash` 真实调用已打通。验证通过本机正常 StoreSpark 服务执行，配置来源为用户保存的服务端配置，没有向工作流注入 MockTransport。模型密钥未写入报告、源码、日志或 GitHub。
